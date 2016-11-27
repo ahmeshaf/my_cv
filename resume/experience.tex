@@ -1,0 +1,56 @@
+\cvsection{Experience}
+\begin{cventries}
+  \cvexp
+    {Senior Software Engineer \& Data Scientist (Printer Cartridge Solutions)}
+    {HP Inc., Printing and Personal Systems R\&D Group}
+    {Bangalore, India}
+    {Aug. 2012 - Present}
+    {
+      \begin{cvitems}
+        \item 
+        {
+            \project
+            {HP Printer Cartridge Evaluation Tool:}
+            {\begin{itemize}[leftmargin=3ex, nosep, noitemsep]
+            \setlength{\parskip}{2pt}
+            \renewcommand{\labelitemii}{\textbullet}
+                \item {Worked on HP's printer cartridge evaluation tool with which the electrical components of more than a million cartridges are tested daily.}
+                \item {Optimized the tool's method of reading and measuring around 10000 resistors of a particular cartridge.} %Note
+                \item {The optimization involved changing how we used to read single resistor in series to a batch of them in parallel, followed by recalibrating original values of individual resistors. This resulted in fewer set/unset calls to the tool's FPGA, thereby reducing time for a single test.}
+                \item {As a part of 5 member team, redesigned this tool (developed in 2005) to address hardware obsolescence, and to make it more efficient for the newer and complex cartridges. Implemented various graphical representation of the measurements for efficient analysis of the data.}
+            \end{itemize} 
+            }
+        }        
+        \item 
+        {
+            \project
+            {Printer Cartridge Anomoly Detection System:}
+            {\begin{itemize}[leftmargin=3ex, nosep, noitemsep]
+            \setlength{\parskip}{2pt}
+            \renewcommand{\labelitemii}{\textbullet}
+                \item {The measurements of each cartridge is saved in a database tagged with an ID using the above tool. I proposed an idea to use this data to build an anomaly detection system, so that we can flag an anomalous cartridge at the manufacturing line even when it passes its evaluation.}
+                \item {Implemented a Multivariate Gaussian Distribution by taking 2000/10000 measurements of a million similar tests. We then flag a new cartridge if its probability in the distribution falls below the cutoff.}
+                \item {Down the line it will help recalibrating the range of values a cartridge must have for it to pass the evaluation.}
+                \item {Future work would be to fine-tune the feature selection by working closely with the cartridge's hardware design team.}
+            \end{itemize} 
+            }
+        }
+        \item 
+        {
+            \project
+            {Customer Service Support:}
+            {\begin{itemize}[leftmargin=3ex, nosep, noitemsep]
+            \setlength{\parskip}{2pt}
+            \renewcommand{\labelitemii}{\textbullet}
+                \item {Developed a multi-class text classification model which takes in a printer issue's description as input and predicts the most likely root cause, so that the we can direct the user to the appropriate web-page of the fix. %\href{https://github.com/ahmeshaf/cnn-text-classification-tf}{\faGithub}
+                }
+                \item {Extracted around 1.5 million sentences from three year's consolidated issues dump, and trained a Word2Vec model (Mikolov et al.) using this data. By using this data instead of the standard Wikipedia articles, the accuracy jumped from 40 percent to 70 percent for a simple multinominal logistic regression classifier written using Google's TensorFlow library.}
+                \item {The improvement was largely because the model could correctly recognize the jargon used by the customers/support engineers. For example, we got the cosine similarity of 'cx' (a term frequently used by support engineers to denote customer) and 'customer' to be 0.85.}
+                \item {Currently working on clustering similar labels (root causes) from the dump. For now, we have employed the method of taking the mean of the individual word vectors of a sentence and group similar vectors (high cosine similarity). This method although reasonably accurate is computationally inefficient. Currently experimenting on various other methods.}
+                \item {In the consolidated report, the customer service executive also writes down the series of steps they took before finding a fix of an issue. As a team of 3, we are working on extracting these steps from a written sentence using a Hidden Markov Model. This will allow us to automate the labelling of unlabeled data, and also to rank the most frequent actions that solve customer issues.}
+            \end{itemize} 
+            }
+        }
+      \end{cvitems}
+    }
+\end{cventries}
